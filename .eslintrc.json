@@ -1,0 +1,34 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "semi": [
+            "warn",
+            "always"
+        ],
+        "quotes": [
+            "warn",
+            "single"
+        ],
+        "no-console": "warn",
+        "no-eval": "error",
+        // suppress errors for missing 'import React' in files
+        "react/react-in-jsx-scope": "off"
+    }
+}
