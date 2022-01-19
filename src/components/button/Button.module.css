@@ -1,0 +1,27 @@
+.btn {
+  width: 100%;
+  height: 3rem;
+  padding: 10px;
+  border: none;
+  background-color: rebeccapurple;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.btn:focus {
+  outline: 0;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+.btn:active {
+  transform: scale(0.95);
+}
+.btn:disabled {
+  background-color: #ababab;
+  cursor: not-allowed;
+}
