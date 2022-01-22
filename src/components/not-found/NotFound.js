@@ -10,7 +10,7 @@ const NotFound = () => {
       <p className={styles['notFound-content']}>
         Sayfa kaldırılmış veya değiştirilmiş olabilir.
       </p>
-      <Link to="/basvuru-basarili">
+      <Link to="/basvurular">
         <Button type="button" content={'Başvurularım'} />
       </Link>
     </div>

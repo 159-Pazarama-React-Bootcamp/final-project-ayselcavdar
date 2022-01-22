@@ -1,8 +1,7 @@
-import React from 'react';
-import Success from '../../components/success/Success';
+import Applications from '../../components/applications/Applications';
 
 const SuccessfullApplication = () => {
-  return <Success />
+  return <Applications />;
 };
 
 export default SuccessfullApplication;
