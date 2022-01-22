@@ -94,15 +94,7 @@ const CreateAppForm = () => {
                   type="textarea"
                 />
                 <FormInput label="Adress" name="address" type="textarea" />
-                <div
-                  style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                  }}
-                >
+                <div className={styles['main-file--container']}>
                   <div className={styles['file-input--container']}>
                     <FormInput
                       label="Fotograf Yükle"

@@ -1,17 +1,8 @@
-import React from 'react';
+import styles from './Applications.module.css';
 
 const ThanksMessage = () => {
   return (
-    <div
-      style={{
-        backgroundColor: "#CFF4FC",
-        fontWeigth: "500",
-        fontSize: "1.2rem",
-        width: "80%",
-        borderRadius: "10px",
-        color: "#2B444E",
-      }}
-    >
+    <div className={styles['message-container']}>
       <p>Teşekkürler! Başvurunuz başarıyla alınmıştır.</p>
       <p>
         Başvuru durumunuzu aşağıda size verilen başvuru kodu ile sorgulayabilir

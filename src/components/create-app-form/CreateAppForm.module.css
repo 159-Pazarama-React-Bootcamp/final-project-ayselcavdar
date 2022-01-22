@@ -11,6 +11,12 @@
   position: absolute;
   z-index: -1;
 }
+.main-file--container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .file-input--container {
   background-color: rgb(241, 109, 94);
   font-size: large;
@@ -41,13 +47,13 @@
   margin-right: 1rem;
 }
 
-.remove-image{
+.remove-image {
   position: relative;
   left: 140px;
   bottom: -15px;
   width: 25px;
   height: 25px;
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
   border-radius: 50%;
   color: #333;
   display: flex;

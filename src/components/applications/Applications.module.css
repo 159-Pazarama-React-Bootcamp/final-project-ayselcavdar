@@ -4,16 +4,19 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 1rem;
+  margin-block: 2.5rem;
 }
+
 .appList-container > div {
   margin-bottom: 1rem;
 }
+
 .subheader-section {
   display: inline-flex;
   justify-content: center;
   align-items: center;
 }
+
 .subheader-section button {
   margin-top: 0px;
 }
@@ -25,6 +28,15 @@
   margin-right: 0.1rem;
   margin-block: 1rem;
 }
+/* ThanksMessage comp styles */
+.message-container {
+  background-color: #cff4fc;
+  font-weight: 500;
+  font-size: 1.2rem;
+  width: 90%;
+  border-radius: 10px;
+  color: #2b444e;
+}
 
 @media only screen and (min-width: 765px) {
   .appList-container {
@@ -32,6 +44,7 @@
     flex-wrap: wrap;
   }
 }
+
 @media only screen and (min-width: 1025px) {
   .appList-container {
     display: flex;
