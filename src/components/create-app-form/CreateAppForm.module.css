@@ -1,9 +1,9 @@
 .application-container {
   width: 100%;
+  background-color: #EDF2F6;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 2rem;
 }
 
 .file-input {
@@ -41,6 +41,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .btn-container > button {

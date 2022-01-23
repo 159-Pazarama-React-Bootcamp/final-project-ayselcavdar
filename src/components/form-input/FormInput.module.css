@@ -6,7 +6,7 @@
 }
 .form-container--label {
   display: block;
-  color: #6b63ff;
+  color: #333;
   font-weight: 500;
 }
 .form-control {
@@ -15,6 +15,9 @@
   box-sizing: border-box;
 }
 .form-control[type="text"] {
+  width: 100%;
+}
+.form-control[type="password"] {
   width: 100%;
 }
 .error {

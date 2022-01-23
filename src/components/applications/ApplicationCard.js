@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Button from '../button/Button';
 import styles from './ApplicationCard.module.css';
 
-const ApplicationCard = ({ app }) => {
+const ApplicationCard = ({ app, to = `/basvurular/${app.queryCode}` }) => {
   return (
     <div key={app.id} className={styles['card-container']}>
       {app?.imageUrl && (
@@ -20,7 +20,7 @@ const ApplicationCard = ({ app }) => {
         </div>
       </div>
       <div className={styles['details']}>
-        <Link to={`/basvurular/${app.queryCode}`}>
+        <Link to={to}>
           <Button type="button" content="Detaylar" />
         </Link>
       </div>
@@ -32,4 +32,5 @@ export default ApplicationCard;
 
 ApplicationCard.propTypes = {
   app: PropTypes.object.isRequired,
+  to: PropTypes.string.isRequired,
 };

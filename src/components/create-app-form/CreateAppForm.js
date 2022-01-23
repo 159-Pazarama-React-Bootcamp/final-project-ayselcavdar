@@ -61,13 +61,12 @@ const CreateAppForm = () => {
   // simulate api request for now
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-  const handleSubmit = () => {
-    navigate('/basvuru-basarili');
-  };
+  const handleSubmit = () => navigate('/basvurular');
+  
   return (
     <div
       className={styles['application-container']}
-      style={{ justifyContent: width < 1024 && 'center' }}
+      style={{ justifyContent: width < 1024 && 'center', height: !profileImg && '100vh', }}
     >
       <div>
         <Formik
@@ -78,9 +77,14 @@ const CreateAppForm = () => {
             handleSubmit();
           }}
         >
-          {(formik) => (
+          {() => (
             <div>
-              <h1 style={{ textAlign: width < 1024 && 'center' }}>
+              <h1
+                style={{
+                  textAlign: width < 1024 && 'center',
+                  color: 'rgb(107, 99, 255)',
+                }}
+              >
                 Basvuru Olustur
               </h1>
               <Form>
@@ -126,8 +130,8 @@ const CreateAppForm = () => {
                   <Button type="submit" content={'Gönder'} />
                   <Button
                     type="reset"
-                    onClick={() => formik.resetForm({ values: '' })}
-                    content={'Temizle'}
+                    onClick={() => navigate('/basvurular')}
+                    content={'Basvurularım'}
                   />
                 </div>
               </Form>
@@ -138,7 +142,7 @@ const CreateAppForm = () => {
       <div>
         <img
           src={require('../../assets/images/form1.png')}
-          style={{ display: width < 1024 && 'none' }}
+          style={{ display: width < 1024 && 'none', borderRadius:'1rem' }}
           width={width / 2}
         />
       </div>

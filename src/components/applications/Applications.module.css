@@ -1,10 +1,17 @@
+
+.applications-main--container{
+  background-color: #EDF2F6;
+  width: 100%;
+  min-height: 100vh;
+}
+
 .header-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-block: 2.5rem;
+  padding-block: 2.5rem;
 }
 
 .appList-container > div {
@@ -12,9 +19,11 @@
 }
 
 .subheader-section {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
 }
 
 .subheader-section button {
@@ -22,20 +31,27 @@
 }
 
 .query-input {
-  width: 155px;
+  width: 250px;
   padding: 15px;
   border-radius: 6px;
-  margin-right: 0.1rem;
-  margin-block: 1rem;
+  margin-right: 0.5rem;
+}
+
+.btn-container{
+  display: flex;
+  margin-top: 1rem;
+}
+.new-app-btn{
+  margin-left: 1rem;
 }
 /* ThanksMessage comp styles */
 .message-container {
-  background-color: #cff4fc;
+  background-color: #D7D4F7;
   font-weight: 500;
   font-size: 1.2rem;
   width: 90%;
   border-radius: 10px;
-  color: #2b444e;
+  color: #6B63FF;
 }
 
 @media only screen and (min-width: 765px) {

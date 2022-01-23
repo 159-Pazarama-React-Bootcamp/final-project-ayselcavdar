@@ -28,33 +28,14 @@ const Applications = () => {
       reason: 'sadasdasdasdsd',
       date: '10.11.2021',
     },
-    {
-      id: 3,
-      queryCode: '333333',
-      name: 'obi',
-      reason: 'sadasdasdasdsd',
-      date: '10.11.2021',
-    },
-    {
-      id: 4,
-      queryCode: '44444',
-      name: 'obi',
-      reason: 'sadasdasdasdsd',
-      date: '10.11.2021',
-    },
-    {
-      id: 5,
-      queryCode: '555555',
-      name: 'obi',
-      reason: 'sadasdasdasdsd',
-      date: '10.11.2021',
-    },
+    
+   
   ]);
   const [userQueryCode, setUserQueryCode] = useState('');
   const handleQueryCodeChange = (e) => setUserQueryCode(e.target.value);
 
   return (
-    <>
+    <div className={styles['applications-main--container']}>
       <div className={styles['header-container']}>
         <ThanksMessage />
         <div className={styles['subheader-section']}>
@@ -69,10 +50,15 @@ const Applications = () => {
               className={styles['query-input']}
             />
           </div>
-          <div>
+          <div className={styles['btn-container']}>
             <Link to={`/basvurular/${userQueryCode}`}>
               <Button type="button" content={'Sorgula'} />
             </Link>
+            <div className={styles['new-app-btn']}>
+              <Link to={'/'}>
+                <Button type="reset" content={'Yeni Basvuru Oluştur'}/>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -85,7 +71,7 @@ const Applications = () => {
             ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

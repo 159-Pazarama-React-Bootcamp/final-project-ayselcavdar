@@ -17,7 +17,7 @@ export default function FormInput({ label, ...props }) {
             meta.touched && meta.error && styles['is-invalid']
           } `}
           id={field.name}
-          rows="4"
+          rows="2"
           cols="50"
           {...field}
           {...props}
@@ -45,4 +45,5 @@ export default function FormInput({ label, ...props }) {
 FormInput.propTypes = {
   label: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };
