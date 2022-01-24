@@ -6,6 +6,7 @@ import NotFound from '../components/not-found/NotFound';
 import ProtectedRoutes from './ProtectedRoutes';
 import AdminLogin from '../pages/admin/login';
 import ApplicationList from '../pages/admin/application-list';
+import AdminApplicationDetail from '../pages/admin/application-detail';
 
 
 const AppRouter = () => {
@@ -22,7 +23,7 @@ const AppRouter = () => {
           <>
             <Route path="admin" element={<AdminLogin />} />
             <Route path="admin/basvuru-listesi" element={<ApplicationList />} />
-            <Route path="admin/basvuru-listesi/:basvuruNo" element={<p>details</p>} />
+            <Route path="admin/basvuru-listesi/:basvuruNo" element={<AdminApplicationDetail />} />
           </>
         )}
         <Route path="*" element={<NotFound />} />
