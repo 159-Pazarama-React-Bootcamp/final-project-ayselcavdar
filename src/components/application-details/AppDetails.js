@@ -1,23 +1,26 @@
+import {  useState } from 'react';
 import styles from './AppDetails.module.css';
 import Button from '../button/Button';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import CommentBox from '../comment/CommentBox';
 
-const AppDetails = () => {
-  const details = {
-    id: 0,
-    queryCode: '000000',
-    name: 'obi',
-    surname: 'one',
-    age: '19',
-    tc: '12345678901',
-    reason: 'sadasdasdasdsd',
-    address: 'Apartment, street, floor city/State',
-    date: '10.11.2021',
-    imgUrl: '',
+const AppDetails = ({ details, to = '/basvurular', isAdmin }) => {
+  const [comment, setComment] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleComment = (e) => setComment(e.target.value);
+
+  const submitCommentLine = () => {
+    if(comment.length > 3){
+        setIsSubmitted(true);
+        setComment('');
+    }
+    return false;
   };
 
   const navigate = useNavigate();
-  
+
   return (
     <div className={styles['details-container']}>
       <div className={styles['subdetails-container']}>
@@ -34,15 +37,11 @@ const AppDetails = () => {
                 {details.name} {details.surname}
               </li>
               <li>
-                <span className={styles['detail-item--label']}>
-                  TC Num:
-                </span>{' '}
+                <span className={styles['detail-item--label']}>TC Num:</span>{' '}
                 {details.tc}
               </li>
               <li>
-                <span className={styles['detail-item--label']}>
-                  Yaş:
-                </span>{' '}
+                <span className={styles['detail-item--label']}>Yaş:</span>{' '}
                 {details.age}
               </li>
               <li>
@@ -52,23 +51,28 @@ const AppDetails = () => {
                 {details.reason}
               </li>
               <li>
-                <span className={styles['detail-item--label']}>
-                  Address:
-                </span>{' '}
+                <span className={styles['detail-item--label']}>Address:</span>{' '}
                 {details.address}
               </li>
               <li>
                 <span className={styles['detail-item--label']}>
                   Başvuru Durumu:
                 </span>{' '}
-                değerlendiriliyor.
+                {isSubmitted ? 'cevaplandı' : 'değerlendiriliyor'}.
               </li>
+              {isAdmin && !isSubmitted && (
+                <CommentBox
+                  comment={comment}
+                  handleComment={handleComment}
+                  submitCommentLine={submitCommentLine}
+                />
+              )}
             </ul>
           </div>
           <Button
             type="button"
-            content={'Başvurularım'}
-            onClick={() => navigate('/basvurular')}
+            content={isAdmin ? 'Başvurular' : 'Başvurularım'}
+            onClick={() => navigate(to)}
           />
         </div>
         <div>
@@ -87,3 +91,9 @@ const AppDetails = () => {
 };
 
 export default AppDetails;
+
+AppDetails.propTypes = {
+  details: PropTypes.object.isRequired,
+  to: PropTypes.string,
+  isAdmin: PropTypes.bool,
+};
