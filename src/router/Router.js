@@ -7,10 +7,9 @@ import ProtectedRoutes from './ProtectedRoutes';
 import AdminLogin from '../pages/admin/login';
 import ApplicationList from '../pages/admin/application-list';
 import AdminApplicationDetail from '../pages/admin/application-detail';
-
+import AdminRoutes from './AdminRoutes';
 
 const AppRouter = () => {
-  const isAdmin = true;
   return (
     <Router>
       <Routes>
@@ -19,13 +18,14 @@ const AppRouter = () => {
           <Route path="basvurular" element={<SuccessfullApplication />} />
           <Route path="basvurular/:basvuruNo" element={<ApplicationDetail />} />
         </Route>
-        {isAdmin && (
-          <>
-            <Route path="admin" element={<AdminLogin />} />
-            <Route path="admin/basvuru-listesi" element={<ApplicationList />} />
-            <Route path="admin/basvuru-listesi/:basvuruNo" element={<AdminApplicationDetail />} />
-          </>
-        )}
+        <Route path="admin" element={<AdminLogin />} />
+        <Route element={<AdminRoutes />}>
+          <Route path="admin/basvuru-listesi" element={<ApplicationList />} />
+          <Route
+            path="admin/basvuru-listesi/:basvuruNo"
+            element={<AdminApplicationDetail />}
+          />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
