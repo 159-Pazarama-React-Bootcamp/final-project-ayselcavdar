@@ -5,7 +5,7 @@ import Button from '../../button/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutInitiate } from '../../../redux/actions/logoutActions';
 import Dropdown from '../../dropdown/Dropdown';
-import { n, options, statusEnum } from '../../../constants/enum';
+import { options, statusEnum } from '../../../constants/enum';
 
 const ApplicationListComp = () => {
   const [values, setValues] = useState({
@@ -28,7 +28,7 @@ const ApplicationListComp = () => {
     ?.filter((item) => {
       if (values.filterVal !== '' && item.status !== values.filterVal)
         return false;
-      if (!item.id.toLowerCase().slice(-n).includes(values.queryCode))
+      if (!item.id.toLowerCase().includes(values.queryCode.toLowerCase()))
         return false;
       return true;
     })

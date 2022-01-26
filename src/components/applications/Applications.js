@@ -6,7 +6,7 @@ import ApplicationCard from './ApplicationCard';
 import ThanksMessage from './ThanksMessage';
 import { useSelector } from 'react-redux';
 import Dropdown from '../dropdown/Dropdown';
-import { n, options } from '../../constants/enum';
+import { options } from '../../constants/enum';
 
 const Applications = () => {
   const [values, setValues] = useState({
@@ -26,7 +26,7 @@ const Applications = () => {
     ?.filter((item) => {
       if (values.filterVal !== '' && item.status !== values.filterVal)
         return false;
-      if (!item.id.toLowerCase().slice(-n).includes(values.queryCode))
+      if (!item.id.toLowerCase().includes(values.queryCode.toLowerCase()))
         return false;
       return true;
     })

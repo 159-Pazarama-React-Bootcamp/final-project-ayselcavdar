@@ -1,4 +1,3 @@
-const n = 5;
 const options = ['EVALUATING', 'ANSWERED'];
 const statusEnum = {
   EVALUATING: {
