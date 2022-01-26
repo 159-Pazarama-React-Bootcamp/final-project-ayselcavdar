@@ -1,8 +1,12 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styles from './NotFound.module.css';
 import Button from '../button/Button';
+import { useSelector } from 'react-redux';
 
 const NotFound = () => {
+  const { currUser } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+
   return (
     <div className={styles['notFound-container']}>
       <h1 className={styles['notFound-header']}>Sayfa Bulunamadı</h1>
@@ -10,9 +14,13 @@ const NotFound = () => {
       <p className={styles['notFound-content']}>
         Sayfa kaldırılmış veya değiştirilmiş olabilir.
       </p>
-      <Link to="/basvurular">
-        <Button type="button" content={'Başvurularım'} />
-      </Link>
+      <div>
+        <Button
+          type="button"
+          content={currUser ? 'Başvurular' : 'Başvurularım'}
+          onClick={() => navigate(-1)}
+        />
+      </div>
     </div>
   );
 };
