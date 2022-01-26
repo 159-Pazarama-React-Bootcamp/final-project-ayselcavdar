@@ -1,5 +1,5 @@
 .form-container {
-  margin-bottom: 1rem;
+  margin-bottom: .7rem;
 }
 .form-container > textarea {
   resize: vertical;
@@ -18,6 +18,9 @@
   width: 100%;
 }
 .form-control[type="password"] {
+  width: 100%;
+}
+.form-control[type="email"] {
   width: 100%;
 }
 .error {

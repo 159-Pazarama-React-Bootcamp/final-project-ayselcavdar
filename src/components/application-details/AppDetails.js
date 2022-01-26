@@ -1,4 +1,4 @@
-import {  useState } from 'react';
+import { useState } from 'react';
 import styles from './AppDetails.module.css';
 import Button from '../button/Button';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import CommentBox from '../comment/CommentBox';
 import { editApplication } from '../../redux/actions/crudActions';
 import { useDispatch, useSelector } from 'react-redux';
-import { n, statusEnum } from '../../constants/enum';
+import { statusEnum } from '../../constants/enum';
 
 const AppDetails = ({ isAdmin }) => {
   const [comment, setComment] = useState('');
@@ -20,13 +20,13 @@ const AppDetails = ({ isAdmin }) => {
   const submitCommentLine = () => {
     const data = {
       ...details,
-      hasResponse:true,
-      responseText:comment,
+      hasResponse: true,
+      responseText: comment,
       status: statusEnum.ANSWERED.name,
     };
-    if(comment.length > 3){
-        dispatch(editApplication(data));
-        setComment('');
+    if (comment.length > 3) {
+      dispatch(editApplication(data));
+      setComment('');
     }
     return false;
   };
@@ -38,7 +38,8 @@ const AppDetails = ({ isAdmin }) => {
       <div className={styles['subdetails-container']}>
         <div>
           <h3 className={styles['detail-title']}>
-            {details?.id.slice(-n).toLowerCase()} numaralı başvuru bilgileriniz.
+            {details?.id} numaralı başvuru{' '}
+            {isAdmin ? 'bilgileri' : 'bilgileriniz'}.
           </h3>
           <div>
             <ul className={styles['detail-items']}>
@@ -81,9 +82,7 @@ const AppDetails = ({ isAdmin }) => {
               )}
               {details?.responseText && (
                 <li>
-                  <span className={styles['detail-item--label']}>
-                    Cevap:
-                  </span>{' '}
+                  <span className={styles['detail-item--label']}>Cevap:</span>{' '}
                   {details?.responseText}.
                 </li>
               )}
@@ -96,18 +95,15 @@ const AppDetails = ({ isAdmin }) => {
           />
         </div>
         <div>
-          {details?.photo ? (
-            <img
-              className={styles['avatar']}
-              src={details?.photo}
-              alt={`photo of ${details?.name}`}
-            />
-          ) : (
-            <img
-              className={styles['avatar']}
-              src="https://www.w3schools.com/howto/img_avatar2.png"
-            />
-          )}
+          <img
+            className={styles['avatar']}
+            src={
+              details?.photo
+                ? details.photo
+                : 'https://www.w3schools.com/howto/img_avatar2.png'
+            }
+            alt={`photo of ${details?.name}`}
+          />
         </div>
       </div>
     </div>

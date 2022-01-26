@@ -44,15 +44,17 @@ const ApplicationListComp = () => {
           <h2>Cevap bekleyen başvurular</h2>
           <Button onClick={handleLogout} type="reset" content={'çıkış'} />
         </div>
-        <div>
-          <input
-            type={'text'}
-            placeholder="Başvuru kodu ile filtreleyiniz."
-            name="queryCode"
-            value={values.queryCode}
-            onChange={handleChange}
-            className={styles['filter-input--admin']}
-          />
+        <div className={styles['filter-container']}>
+          <div>
+            <input
+              type={'text'}
+              placeholder="Başvuru kodu ile filtreleyiniz."
+              name="queryCode"
+              value={values.queryCode}
+              onChange={handleChange}
+              className={styles['filter-input--admin']}
+            />
+          </div>
           <Dropdown
             label="Başvuru durumuna göre filtereleyiniz"
             name="filterVal"

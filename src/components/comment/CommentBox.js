@@ -14,10 +14,11 @@ const CommentBox = (props) => {
           cols="35"
           placeholder="başvuruyu cevapla"
         />
-        <span 
-          className={comment.length > 3 ? styles['active'] : styles['disable']} 
+        <span
+          className={comment.length > 3 ? styles['active'] : styles['disable']}
           onClick={submitCommentLine}
-        >Gönder
+        >
+          Gönder
         </span>
       </div>
     </>

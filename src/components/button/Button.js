@@ -5,7 +5,7 @@ const Button = ({ disabled = false, content, ...props }) => {
   return (
     <button
       disabled={disabled}
-      className={styles.btn}
+      className={`${styles.btn}`}
       style={
         props.type === 'reset'
           ? {
