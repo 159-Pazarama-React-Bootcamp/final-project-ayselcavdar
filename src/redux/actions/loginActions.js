@@ -18,7 +18,7 @@ const loginFail = (error) => ({
 const setUser = (user) => ({
   type: types.SET_USER,
   payload: user,
-})
+});
 
 const loginInitiate = (email, password) => {
   return async function (dispatch) {
