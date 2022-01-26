@@ -1,15 +1,21 @@
 import styles from './Applications.module.css';
+import PropTypes from 'prop-types';
 
-const ThanksMessage = () => {
+const ThanksMessage = ({
+  title = 'Teşekkürler! Başvurunuz başarıyla alınmıştır.',
+  content,
+}) => {
   return (
     <div className={styles['message-container']}>
-      <p>Teşekkürler! Başvurunuz başarıyla alınmıştır.</p>
-      <p>
-        Başvuru durumunuzu aşağıda size verilen başvuru kodu ile sorgulayabilir
-        veya detaya tıklayarak öğrenebilirsiniz.
-      </p>
+      <p>{title}</p>
+      <p>{content}</p>
     </div>
   );
 };
 
 export default ThanksMessage;
+
+ThanksMessage.propTypes = {
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string,
+};

@@ -9,14 +9,14 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../button/Button';
 import { useDispatch } from 'react-redux';
 import { createApplication } from '../../redux/actions/crudActions';
-import { useSelector } from 'react-redux';
 
 const CreateAppForm = () => {
   const [profileImg, setProfileImg] = useState(null);
   const [width] = useWindowSize();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { currUser } = useSelector(state => state.user)
+  const tcRegx = /^[1-9]{1}[0-9]{9}[02468]{1}$/;
+
   const initialValues = {
     firstName: '',
     lastName: '',
@@ -25,6 +25,7 @@ const CreateAppForm = () => {
     reason: '',
     address: '',
     photo: '',
+    tc:'',
   };
 
   const validate = Yup.object({
@@ -45,11 +46,9 @@ const CreateAppForm = () => {
     tcNum: Yup.string()
       .trim()
       .matches(
-        /^[1-9][0-9]*$/,
-        'Tc kimlik numarası yalnızca rakamlardan olusmalıdır ve sıfır ile baslayamaz.'
+        tcRegx,
+        'Tc kimlik numarası geçerli değil.'
       )
-      .min(11, 'Tc kimlik numarası 11 haneli olmalıdır')
-      .max(11, 'Tc kimlik numarası 11 haneli olmalıdır')
       .required('Zorunlu alan'),
     reason: Yup.string()
       .trim()
@@ -61,23 +60,31 @@ const CreateAppForm = () => {
       .min(20, '20 karakter veya daha üzeri olmalı')
       .max(255, '255 karater veya daha altı olmalı')
       .required('Zorunlu alan'),
+    tc: Yup.string()
+      .trim()
+      .matches(
+        tcRegx,
+        'Tc kimlik numarası geçerli değil.'
+      )
   });
 
   const handleSubmit = (values) => {
     values['photo'] = profileImg;
     dispatch(createApplication(values));
-    navigate('/basvurular');
+    navigate(`/basvurularim/${values.tcNum}`);
   };
 
+  const showApplications = (values) => {
+    tcRegx.test(values.tc) ? navigate(`/basvurularim/${values.tc}`) : false;
+  };
   return (
     <div
       className={styles['application-container']}
       style={{
         justifyContent: width < 1024 && 'center',
-        height: !profileImg && '100vh',
       }}
     >
-      <div>
+      <>
         <Formik
           initialValues={initialValues}
           validationSchema={validate}
@@ -86,12 +93,31 @@ const CreateAppForm = () => {
             resetForm({});
           }}
         >
-          {() => (
+          {({ values }) => (
             <div>
+              <p className={styles['already-have']}>
+                Mevcut başvurularımı görüntülemek istiyorum.
+              </p>
+              <div className={styles['query-container']}>
+                <FormInput
+                  name="tc"
+                  placeholder="Tc kimlik numaranızı giriniz"
+                  type="text"
+                  label={''}
+                  customClass={styles['custom-input']}
+                />
+                <Button
+                  type="button"
+                  content={'Görüntüle'}
+                  onClick={() => showApplications(values)}
+                />
+              </div>
+              <hr />
               <h1
                 style={{
                   textAlign: width < 1024 && 'center',
                   color: 'rgb(107, 99, 255)',
+                  marginTop: '0px',
                 }}
               >
                 Basvuru Olustur
@@ -137,17 +163,12 @@ const CreateAppForm = () => {
                 </div>
                 <div className={styles['btn-container']}>
                   <Button type="submit" content={'Gönder'} />
-                  <Button
-                    type="reset"
-                    onClick={() => navigate(currUser ? 'admin/basvuru-listesi' : '/basvurular')}
-                    content={currUser ? 'Basvurular' : 'Basvurularım'}
-                  />
                 </div>
               </Form>
             </div>
           )}
         </Formik>
-      </div>
+      </>
       <div>
         <img
           src={require('../../assets/images/form1.png')}

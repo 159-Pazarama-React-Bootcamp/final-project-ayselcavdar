@@ -1,17 +1,19 @@
 import {  useState } from 'react';
 import styles from './AppDetails.module.css';
 import Button from '../button/Button';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import CommentBox from '../comment/CommentBox';
 import { editApplication } from '../../redux/actions/crudActions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { n, statusEnum } from '../../constants/enum';
 
-const AppDetails = ({ details, to = '/basvurular', isAdmin }) => {
+const AppDetails = ({ isAdmin }) => {
   const [comment, setComment] = useState('');
-  const n = 5;
-
   const dispatch = useDispatch();
+  const { basvuruNo } = useParams();
+  const { applications } = useSelector((state) => state?.data);
+  const details = applications?.find((item) => item.id == basvuruNo);
 
   const handleComment = (e) => setComment(e.target.value);
 
@@ -20,7 +22,7 @@ const AppDetails = ({ details, to = '/basvurular', isAdmin }) => {
       ...details,
       hasResponse:true,
       responseText:comment,
-      status: 'ANSWERED',
+      status: statusEnum.ANSWERED.name,
     };
     if(comment.length > 3){
         dispatch(editApplication(data));
@@ -36,7 +38,7 @@ const AppDetails = ({ details, to = '/basvurular', isAdmin }) => {
       <div className={styles['subdetails-container']}>
         <div>
           <h3 className={styles['detail-title']}>
-            {details.id.slice(-n).toLowerCase()} numaralı başvuru bilgileriniz.
+            {details?.id.slice(-n).toLowerCase()} numaralı başvuru bilgileriniz.
           </h3>
           <div>
             <ul className={styles['detail-items']}>
@@ -44,33 +46,33 @@ const AppDetails = ({ details, to = '/basvurular', isAdmin }) => {
                 <span style={{ fontWeight: '500', fontSize: '1.2rem' }}>
                   Ad-Soyad:
                 </span>{' '}
-                {details.firstName} {details.lastName}
+                {details?.firstName} {details?.lastName}
               </li>
               <li>
                 <span className={styles['detail-item--label']}>TC Num:</span>{' '}
-                {details.tcNum}
+                {details?.tcNum}
               </li>
               <li>
                 <span className={styles['detail-item--label']}>Yaş:</span>{' '}
-                {details.age}
+                {details?.age}
               </li>
               <li>
                 <span className={styles['detail-item--label']}>
                   Başvuru nedeni:
                 </span>{' '}
-                {details.reason}
+                {details?.reason}
               </li>
               <li>
                 <span className={styles['detail-item--label']}>Address:</span>{' '}
-                {details.address}
+                {details?.address}
               </li>
               <li>
                 <span className={styles['detail-item--label']}>
                   Başvuru Durumu:
                 </span>{' '}
-                {details.status}.
+                {statusEnum[details?.status].descr}.
               </li>
-              {isAdmin && !details.hasResponse && (
+              {isAdmin && !details?.hasResponse && (
                 <CommentBox
                   comment={comment}
                   handleComment={handleComment}
@@ -82,7 +84,7 @@ const AppDetails = ({ details, to = '/basvurular', isAdmin }) => {
                   <span className={styles['detail-item--label']}>
                     Cevap:
                   </span>{' '}
-                  {details.responseText}.
+                  {details?.responseText}.
                 </li>
               )}
             </ul>
@@ -90,15 +92,15 @@ const AppDetails = ({ details, to = '/basvurular', isAdmin }) => {
           <Button
             type="button"
             content={isAdmin ? 'Başvurular' : 'Başvurularım'}
-            onClick={() => navigate(to)}
+            onClick={() => navigate(-1)}
           />
         </div>
         <div>
-          {details.photo ? (
+          {details?.photo ? (
             <img
               className={styles['avatar']}
-              src={details.photo}
-              alt={`photo of ${details.name}`}
+              src={details?.photo}
+              alt={`photo of ${details?.name}`}
             />
           ) : (
             <img
@@ -115,7 +117,5 @@ const AppDetails = ({ details, to = '/basvurular', isAdmin }) => {
 export default AppDetails;
 
 AppDetails.propTypes = {
-  details: PropTypes.object.isRequired,
-  to: PropTypes.string,
   isAdmin: PropTypes.bool,
 };
