@@ -4,16 +4,26 @@ import Button from '../button/Button';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import CommentBox from '../comment/CommentBox';
+import { editApplication } from '../../redux/actions/crudActions';
+import { useDispatch } from 'react-redux';
 
 const AppDetails = ({ details, to = '/basvurular', isAdmin }) => {
   const [comment, setComment] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const n = 5;
+
+  const dispatch = useDispatch();
 
   const handleComment = (e) => setComment(e.target.value);
 
   const submitCommentLine = () => {
+    const data = {
+      ...details,
+      hasResponse:true,
+      responseText:comment,
+      status: 'ANSWERED',
+    };
     if(comment.length > 3){
-        setIsSubmitted(true);
+        dispatch(editApplication(data));
         setComment('');
     }
     return false;
@@ -26,7 +36,7 @@ const AppDetails = ({ details, to = '/basvurular', isAdmin }) => {
       <div className={styles['subdetails-container']}>
         <div>
           <h3 className={styles['detail-title']}>
-            {details.date} tarihli başvuru bilgileriniz
+            {details.id.slice(-n).toLowerCase()} numaralı başvuru bilgileriniz.
           </h3>
           <div>
             <ul className={styles['detail-items']}>
@@ -34,11 +44,11 @@ const AppDetails = ({ details, to = '/basvurular', isAdmin }) => {
                 <span style={{ fontWeight: '500', fontSize: '1.2rem' }}>
                   Ad-Soyad:
                 </span>{' '}
-                {details.name} {details.surname}
+                {details.firstName} {details.lastName}
               </li>
               <li>
                 <span className={styles['detail-item--label']}>TC Num:</span>{' '}
-                {details.tc}
+                {details.tcNum}
               </li>
               <li>
                 <span className={styles['detail-item--label']}>Yaş:</span>{' '}
@@ -58,14 +68,22 @@ const AppDetails = ({ details, to = '/basvurular', isAdmin }) => {
                 <span className={styles['detail-item--label']}>
                   Başvuru Durumu:
                 </span>{' '}
-                {isSubmitted ? 'cevaplandı' : 'değerlendiriliyor'}.
+                {details.status}.
               </li>
-              {isAdmin && !isSubmitted && (
+              {isAdmin && !details.hasResponse && (
                 <CommentBox
                   comment={comment}
                   handleComment={handleComment}
                   submitCommentLine={submitCommentLine}
                 />
+              )}
+              {details?.responseText && (
+                <li>
+                  <span className={styles['detail-item--label']}>
+                    Cevap:
+                  </span>{' '}
+                  {details.responseText}.
+                </li>
               )}
             </ul>
           </div>
@@ -76,8 +94,12 @@ const AppDetails = ({ details, to = '/basvurular', isAdmin }) => {
           />
         </div>
         <div>
-          {details.imgUrl ? (
-            <img className={styles['avatar']} src={details.imgUrl} />
+          {details.photo ? (
+            <img
+              className={styles['avatar']}
+              src={details.photo}
+              alt={`photo of ${details.name}`}
+            />
           ) : (
             <img
               className={styles['avatar']}
