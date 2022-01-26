@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
-import styles from "./Dropdown.module.css";
+import PropTypes from 'prop-types';
+import styles from './Dropdown.module.css';
 
 const Dropdown = ({
   label,
@@ -11,7 +11,7 @@ const Dropdown = ({
   ...rest
 }) => {
   return (
-    <div className={`${styles["form-group--select"]} ${customClass}`}>
+    <div className={`${styles['form-group--select']} ${customClass}`}>
       <select
         name={name}
         value={value}
@@ -41,10 +41,10 @@ Dropdown.propTypes = {
 };
 
 Dropdown.defaultProps = {
-  label: "",
-  value: "",
-  customClass: "",
-  placeholder: "",
+  label: '',
+  value: '',
+  customClass: '',
+  placeholder: '',
 };
 
 export default Dropdown;
