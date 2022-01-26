@@ -5,14 +5,16 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { auth } from './utils/firebase.utils';
 import { setUser } from './redux/actions/loginActions';
+import { getApplications } from './redux/actions/crudActions';
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
    onAuthStateChanged(auth, (user) => dispatch(setUser(user)));
+    dispatch(getApplications());
   }, [dispatch]);
-
+  
   return (
     <main>
       <AppRouter />

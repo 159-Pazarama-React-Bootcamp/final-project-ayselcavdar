@@ -7,64 +7,14 @@ import { logoutInitiate } from '../../../redux/actions/logoutActions';
 
 
 const ApplicationListComp = () => {
-  const [applications] = useState([
-    {
-      id: 0,
-      queryCode: '000000',
-      name: 'obi',
-      reason: 'sadasdasdasdsd',
-      date: '10.11.2021',
-    },
-    {
-      id: 1,
-      queryCode: '111111',
-      name: 'obi',
-      reason: 'sadasdasdasdsd',
-      date: '10.11.2021',
-    },
-    {
-      id: 2,
-      queryCode: '222222',
-      name: 'obi',
-      reason: 'sadasdasdasdsd',
-      date: '10.11.2021',
-    },
-    {
-      id: 3,
-      queryCode: '111111',
-      name: 'obi',
-      reason: 'sadasdasdasdsd',
-      date: '10.11.2021',
-    },
-    {
-      id: 4,
-      queryCode: '222222',
-      name: 'obi',
-      reason: 'sadasdasdasdsd',
-      date: '10.11.2021',
-    },
-    {
-      id: 5,
-      queryCode: '111111',
-      name: 'obi',
-      reason: 'sadasdasdasdsd',
-      date: '10.11.2021',
-    },
-    {
-      id: 6,
-      queryCode: '222222',
-      name: 'obi',
-      reason: 'sadasdasdasdsd',
-      date: '10.11.2021',
-    },
-  ]);
   const [applicationCode, setApplicationCode] = useState('');
-  const { currUser } = useSelector((state) => state.user);
+  const {user, data} = useSelector((state) => state);
   const dispatch = useDispatch();
   const handleFilterByAppCode = (e) => setApplicationCode(e.target.value);
+  const n = 5;
 
   const handleLogout = () => {
-    currUser && dispatch(logoutInitiate());
+    user.currUser && dispatch(logoutInitiate());
   };
 
   return (
@@ -85,13 +35,13 @@ const ApplicationListComp = () => {
         </div>
       </div>
       <div className={styles['card-container']}>
-        {applications
-          .filter((item) => item.queryCode.includes(applicationCode))
+        {data?.applications?.filter((item) => 
+          item?.id?.toLowerCase().slice(-n).includes(applicationCode))
           ?.map((item) => (
             <ApplicationCard
               key={item.id}
               app={item}
-              to={`/admin/basvuru-listesi/${item.queryCode}`}
+              to={`/admin/basvuru-listesi/${item.id}`}
             />
           ))}
       </div>
