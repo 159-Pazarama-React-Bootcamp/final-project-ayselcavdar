@@ -8,6 +8,7 @@ import {
   remove,
   set,
 } from 'firebase/database';
+import { statusEnum } from '../../constants/enum';
 
 const createApplicationStart = () => ({
   type: types.CREATE_APPLICATION_START,
@@ -75,7 +76,7 @@ const createApplication = (application) => {
         isUser: true,
         hasResponse: false,
         responseText: '',
-        status: 'EVALUATING',
+        status: statusEnum.EVALUATING.name,
       });
       dispatch(createApplicationSuccess());
     } catch (error) {
