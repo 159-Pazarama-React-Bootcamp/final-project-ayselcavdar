@@ -7,11 +7,16 @@ import { useState } from 'react';
 import { imgHandler, removeImg } from '../../helper/imgUpload';
 import { useNavigate } from 'react-router-dom';
 import Button from '../button/Button';
+import { useDispatch } from 'react-redux';
+import { createApplication } from '../../redux/actions/crudActions';
+import { useSelector } from 'react-redux';
 
 const CreateAppForm = () => {
   const [profileImg, setProfileImg] = useState(null);
   const [width] = useWindowSize();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { currUser } = useSelector(state => state.user)
   const initialValues = {
     firstName: '',
     lastName: '',
@@ -58,23 +63,27 @@ const CreateAppForm = () => {
       .required('Zorunlu alan'),
   });
 
-  // simulate api request for now
-  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  const handleSubmit = (values) => {
+    values['photo'] = profileImg;
+    dispatch(createApplication(values));
+    navigate('/basvurular');
+  };
 
-  const handleSubmit = () => navigate('/basvurular');
-  
   return (
     <div
       className={styles['application-container']}
-      style={{ justifyContent: width < 1024 && 'center', height: !profileImg && '100vh', }}
+      style={{
+        justifyContent: width < 1024 && 'center',
+        height: !profileImg && '100vh',
+      }}
     >
       <div>
         <Formik
           initialValues={initialValues}
           validationSchema={validate}
-          onSubmit={async () => {
-            await sleep(2500);
-            handleSubmit();
+          onSubmit={(values, { resetForm }) => {
+            handleSubmit(values);
+            resetForm({});
           }}
         >
           {() => (
@@ -130,8 +139,8 @@ const CreateAppForm = () => {
                   <Button type="submit" content={'Gönder'} />
                   <Button
                     type="reset"
-                    onClick={() => navigate('/basvurular')}
-                    content={'Basvurularım'}
+                    onClick={() => navigate(currUser ? 'admin/basvuru-listesi' : '/basvurular')}
+                    content={currUser ? 'Basvurular' : 'Basvurularım'}
                   />
                 </div>
               </Form>
@@ -142,7 +151,7 @@ const CreateAppForm = () => {
       <div>
         <img
           src={require('../../assets/images/form1.png')}
-          style={{ display: width < 1024 && 'none', borderRadius:'1rem' }}
+          style={{ display: width < 1024 && 'none', borderRadius: '1rem' }}
           width={width / 2}
         />
       </div>
