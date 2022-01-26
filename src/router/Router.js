@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CreateApplication from '../pages/create-application';
-import SuccessfullApplication from '../pages/applications';
+import Applications from '../pages/applications';
 import ApplicationDetail from '../pages/application-detail';
 import NotFound from '../components/not-found/NotFound';
 import ProtectedRoutes from './ProtectedRoutes';
@@ -9,14 +9,18 @@ import ApplicationList from '../pages/admin/application-list';
 import AdminApplicationDetail from '../pages/admin/application-detail';
 import AdminRoutes from './AdminRoutes';
 
-const AppRouter = () => {
+const AppRouter = () => {  
   return (
     <Router>
       <Routes>
+        <Route path="*" element={<NotFound />} />
         <Route path="/" element={<CreateApplication />} />
         <Route element={<ProtectedRoutes />}>
-          <Route path="basvurular" element={<SuccessfullApplication />} />
-          <Route path="basvurular/:basvuruNo" element={<ApplicationDetail />} />
+          <Route path="basvurularim/:tcNum" element={<Applications />} />
+          <Route
+            path="basvurularim/:tcNum/:basvuruNo"
+            element={<ApplicationDetail />}
+          />
         </Route>
         <Route path="admin" element={<AdminLogin />} />
         <Route element={<AdminRoutes />}>
@@ -26,7 +30,6 @@ const AppRouter = () => {
             element={<AdminApplicationDetail />}
           />
         </Route>
-        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
