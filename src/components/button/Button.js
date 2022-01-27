@@ -1,7 +1,7 @@
 import styles from './Button.module.css';
 import PropTypes from 'prop-types';
 
-const Button = ({ disabled = false, content, ...props }) => {
+const Button = ({ disabled, content, ...props }) => {
   return (
     <button
       disabled={disabled}

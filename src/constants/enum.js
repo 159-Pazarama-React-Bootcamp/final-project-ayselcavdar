@@ -10,4 +10,4 @@ const statusEnum = {
   },
 };
 
-export { n, options, statusEnum };
+export { options, statusEnum };

@@ -12,7 +12,7 @@ export const authReducer = (state = initialState, action) => {
     case types.LOGOUT_START: {
       return {
         ...state,
-        login: true,
+        loading: true,
       };
     }
     case types.LOGOUT_SUCCESS: {
@@ -34,6 +34,7 @@ export const authReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         currUser: action.payload,
+        error:null,
       };
     }
     case types.LOGIN_FAIL:

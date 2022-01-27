@@ -7,14 +7,14 @@ export default function FormInput({ label, customClass='', ...props }) {
   const [field, meta] = useField(props);
   
   return (
-    <div className={`${styles['form-container']} ${customClass}`}>
-      <label className={styles['form-container--label']} htmlFor={field.name}>
+    <div className={`${styles["form-container"]} ${customClass}`}>
+      <label className={styles["form-container--label"]} htmlFor={field.name}>
         {label}
       </label>
-      {type === 'textarea' ? (
+      {type === "textarea" ? (
         <textarea
-          className={`${styles['form-control']} ${
-            meta.touched && meta.error && styles['is-invalid']
+          className={`${styles["form-control"]} ${
+            meta.touched && meta.error && styles["is-invalid"]
           } `}
           id={field.name}
           rows="2"
@@ -24,8 +24,8 @@ export default function FormInput({ label, customClass='', ...props }) {
         />
       ) : (
         <input
-          className={`${styles['form-control']} ${
-            meta.touched && meta.error && styles['is-invalid']
+          className={`${styles["form-control"]} ${
+            meta.touched && meta.error && styles["is-invalid"]
           }`}
           id={field.name}
           {...field}
