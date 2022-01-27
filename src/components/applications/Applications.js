@@ -7,6 +7,8 @@ import ThanksMessage from './ThanksMessage';
 import { useSelector } from 'react-redux';
 import Dropdown from '../dropdown/Dropdown';
 import { options } from '../../constants/enum';
+import Loader from '../loader/Loader';
+import Alert from '../alert/Alert';
 
 const Applications = () => {
   const [values, setValues] = useState({
@@ -15,12 +17,12 @@ const Applications = () => {
   });
   const { applications, error, loading } = useSelector((state) => state.data);
   const { tcNum } = useParams();
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
-  
+
   const userSpecifApps = applications?.filter((item) => item.tcNum === tcNum);
   const applicationList = userSpecifApps
     ?.filter((item) => {
@@ -30,13 +32,7 @@ const Applications = () => {
         return false;
       return true;
     })
-    .map((app) => (
-      <ApplicationCard
-        app={app}
-        key={app.id}
-        to={`${app.id}`}
-      />
-    ));
+    .map((app) => <ApplicationCard app={app} key={app.id} to={`${app.id}`} />);
 
   return (
     <div className={styles['applications-main--container']}>
@@ -77,11 +73,17 @@ const Applications = () => {
       <div>
         <div className={styles['appList-container']}>
           {loading ? (
-            <p>Loading...</p>
+            <div className={styles['animation-container']}>
+              <Loader />
+            </div>
           ) : applicationList.length === 0 && !error ? (
-            <p>Nothing found..</p>
+            <Alert
+              title="Bilgilendirme"
+              info
+              body={'Herhangi bir başvuru bulunamadı.'}
+            />
           ) : error ? (
-            <p style={{ color: 'red' }}>error</p>
+            <Alert title="Hata" error body={`${error}`} />
           ) : (
             applicationList
           )}

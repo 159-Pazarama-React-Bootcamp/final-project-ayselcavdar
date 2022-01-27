@@ -7,10 +7,11 @@ import FormInput from '../../form-input/FormInput';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginInitiate } from '../../../redux/actions/loginActions';
+import Alert from '../../alert/Alert';
 
 const AdminLoginComp = () => {
   const navigate = useNavigate();
-  const { currUser } = useSelector((state) => state.user);
+  const { currUser, loading, error } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const initialValues = {
     email: '',
@@ -32,7 +33,8 @@ const AdminLoginComp = () => {
       .required('Zorunlu alan'),
     confirmPassword: Yup.string()
       .trim()
-      .oneOf([Yup.ref('password'), null], 'Password must match'),
+      .oneOf([Yup.ref('password'), null], 'Şifreniz eşleşemedi.')
+      .required('Zorunlu alan')
   });
 
   useEffect(() => {
@@ -44,32 +46,35 @@ const AdminLoginComp = () => {
     dispatch(loginInitiate(values.email, values.password));
 
   return (
-    <Formik
-      initialValues={initialValues}
-      validationSchema={validate}
-      onSubmit={(values, { resetForm }) => {
-        handleSubmit(values);
-        resetForm({});
-      }}
-    >
-      {() => (
-        <div className={styles['admin-login-container']}>
-          <div>
-            <h1>Adminastration</h1>
-            <Form>
-              <FormInput label="E-posta" name="email" type="email" />
-              <FormInput label="Şifre" name="password" type="password" />
-              <FormInput
-                label="Şifrenizi Onaylayın"
-                name="confirmPassword"
-                type="password"
-              />
-              <Button type="submit" content={'Giriş'} />
-            </Form>
+    <>
+      {error && <Alert error title="Hata lütfen tekrar deneyiniz" body={error} />}
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validate}
+        onSubmit={(values, { resetForm }) => {
+          handleSubmit(values);
+          resetForm({});
+        }}
+      >
+        {() => (
+          <div className={styles["admin-login-container"]}>
+            <div>
+              <h1>Adminastration</h1>
+              <Form>
+                <FormInput label="E-posta" name="email" type="email" />
+                <FormInput label="Şifre" name="password" type="password" />
+                <FormInput
+                  label="Şifrenizi Onaylayın"
+                  name="confirmPassword"
+                  type="password"
+                />
+                <Button type="submit" content={"Giriş"} disabled={loading} />
+              </Form>
+            </div>
           </div>
-        </div>
-      )}
-    </Formik>
+        )}
+      </Formik>
+    </>
   );
 };
 

@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logoutInitiate } from '../../../redux/actions/logoutActions';
 import Dropdown from '../../dropdown/Dropdown';
 import { options, statusEnum } from '../../../constants/enum';
+import Loader from '../../loader/Loader';
+import Alert from '../../alert/Alert';
 
 const ApplicationListComp = () => {
   const [values, setValues] = useState({
@@ -65,7 +67,23 @@ const ApplicationListComp = () => {
           />
         </div>
       </div>
-      <div className={styles['card-container']}>{applicationList}</div>
+      <div className={styles['card-container']}>
+        {data?.loading ? (
+          <div className={styles['animation-container']}>
+            <Loader />
+          </div>
+        ) : applicationList.length === 0 && !data?.error ? (
+          <Alert
+            title="Bilgilendirme"
+            info
+            body={'Herhangi bir başvuru bulunamadı.'}
+          />
+        ) : data?.error ? (
+          <Alert title="Hata" error body={`${data?.error}`} />
+        ) : (
+          applicationList
+        )}
+      </div>
     </div>
   );
 };
