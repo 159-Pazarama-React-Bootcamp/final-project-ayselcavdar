@@ -24,7 +24,8 @@
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
 ## Overview
-- [Home](https://final-project-ayselcavdar.vercel.app)
+- [Live Version](https://application-management.netlify.app)
+- [Admin Page](https://application-management.netlify.app/admin)
 - To access admin page
 - u: kodluyoruz@patika.com
 - p: bootcamp109
