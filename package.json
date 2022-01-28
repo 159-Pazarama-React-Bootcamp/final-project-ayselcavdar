@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --watchAll",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -47,8 +47,29 @@
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.8",
     "@babel/preset-react": "^7.16.7",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
     "babel-jest": "^27.4.6",
+    "enzyme": "^3.11.0",
     "eslint": "^8.7.0",
-    "jest": "^27.4.7"
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.4.7",
+    "react-test-renderer": "^17.0.2"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./src/setupTests.js"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src",
+      "assets"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    },
+    "testEnvironment": "jsdom",
+    "verbose": true,
+    "bail": true
   }
 }
