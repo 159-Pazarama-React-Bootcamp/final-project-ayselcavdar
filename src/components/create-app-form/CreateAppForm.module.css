@@ -5,12 +5,14 @@
   justify-content: space-around;
   align-items: center;
   overflow-x: hidden;
+  height: 100vh;
 }
+
 .query-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 .query-container > button {
   height: 2.3rem;
@@ -32,35 +34,15 @@
   text-align: center;
   font-weight: 600;
 }
-.file-input {
-  opacity: 0;
-  position: absolute;
-  z-index: -1;
-}
 .main-file--container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  margin-left: 0.5rem;
 }
 
 .file-input--container {
-  background-color: rgb(241, 109, 94);
-  font-size: large;
-  width: 10rem;
-  border-radius: 0.5rem;
-  text-align: center;
-  padding-top: 10px;
-  margin-bottom: 1rem;
-}
-.file-input--container label {
-  cursor: pointer;
-  color: #fff;
-}
-.file-input--container label:hover {
-  cursor: pointer;
-}
-.uploaded-img--container {
-  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .btn-container {
@@ -89,10 +71,17 @@
   cursor: pointer;
 }
 
-@media only screen and (max-width: 515px) {
+.error {
+  color: red;
+  font-size: 0.6rem;
+  margin-top: 0.2rem;
+}
+
+
+@media only screen and (max-width: 540px) {
   .application-container {
-    display: block;
-    height: 100vh;
+    height: auto;
+    
   }
   .query-container {
     width: 95%;
@@ -106,7 +95,6 @@
   .query-container > div {
     width: 90%;
     margin-bottom: 1rem;
-
   }
   .file-input--container {
     padding-top: 0px;
@@ -115,21 +103,19 @@
   .uploaded-img--container {
     margin-right: 1rem;
   }
-  .btn-container{
+  .btn-container {
     margin-left: 0.5rem;
   }
 }
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 768px) {
   .application-container {
-    height: 100vh;
     align-items: flex-start;
   }
 }
 
-@media only screen and (min-width: 1020px){
+@media only screen and (min-width: 1020px) {
   .application-container {
-    height: auto;
     align-items: center;
-;
+    height: auto;
   }
 }

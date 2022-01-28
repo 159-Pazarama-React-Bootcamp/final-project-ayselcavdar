@@ -47,6 +47,9 @@
 .new-app-btn{
   margin-left: 1rem;
 }
+.animation-container{
+  width: 10rem;
+}
 /* ThanksMessage comp styles */
 .message-container {
   background-color: #D7D4F7;
