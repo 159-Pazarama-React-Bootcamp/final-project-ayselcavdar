@@ -34,8 +34,6 @@
 
 ## Features
 
-This project aims create an app which provide filter restaurants according to cities and shown on Google Maps and interact with them. The app comprises use of Maps and Modal.
-
 - Formik-Yup
 - Firebase Authentication and Realtime Database
 - React router v6
