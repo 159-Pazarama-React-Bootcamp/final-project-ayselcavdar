@@ -1,4 +1,5 @@
 import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
 
 
@@ -16,7 +17,9 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Get a reference to the database service
-const database = getDatabase(app);
+const auth = app?._options?.apiKey && getAuth(app);
 
-export { app, database };
+// Get a reference to the database service
+const database = app?.length > 0 && getDatabase(app);
+
+export { app, database, auth };

@@ -1,7 +1,5 @@
-import { getAuth, signInWithEmailAndPassword, signOut } from 'firebase/auth';
-import { app } from '../firebase.config';
-
-const auth = getAuth(app);
+import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { auth } from '../firebase.config';
 
 const signin = (email, password) =>
   signInWithEmailAndPassword(auth, email, password);
