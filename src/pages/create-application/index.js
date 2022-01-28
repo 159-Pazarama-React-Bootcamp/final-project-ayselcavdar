@@ -1,4 +1,4 @@
-import CreateAppForm from "../../components/create-app-form/CreateAppForm";
+import CreateAppForm from '../../components/create-app-form/CreateAppForm';
 
 const CreateApplication = () => {
   return <CreateAppForm />;

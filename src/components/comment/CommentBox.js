@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './CommentBox.module.css';
 import PropTypes from 'prop-types';
 

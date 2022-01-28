@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -6,9 +7,11 @@ import { deleteApplication } from '../../redux/actions/crudActions';
 import Button from '../button/Button';
 import styles from './ApplicationCard.module.css';
 
-const ApplicationCard = ({ app, to}) => {
-  const { currUser } = useSelector(state => state?.user);
+const ApplicationCard = ({ app, to }) => {
+  // admin authenticate kontrolü yapılması için currUser'a ulaşıyoruz
+  const { currUser } = useSelector((state) => state?.user);
   const dispatch = useDispatch();
+  
   const onDelete = (id) => {
     if (window?.confirm('Başvurunuzu silmek istediğinizden emin misiniz?')) {
       dispatch(deleteApplication(id));
@@ -18,11 +21,17 @@ const ApplicationCard = ({ app, to}) => {
   return (
     <div className={styles['card-container']}>
       <div className={styles['card-content']}>
-        {!currUser && <span className={styles['delete-btn']} onClick={() => onDelete(app?.id)}>&#10007;</span>}
+        {!currUser && (
+          <span
+            className={styles['delete-btn']}
+            onClick={() => onDelete(app?.id)}
+          >
+            &#10007;
+          </span>
+        )}
         <div>
           <p className={styles['card-title']}>
-            <span>{app?.id}</span> numaralı
-            başvurunuz
+            <span>{app?.id}</span> numaralı başvurunuz
           </p>
         </div>
         <div className={styles['card-body']}>

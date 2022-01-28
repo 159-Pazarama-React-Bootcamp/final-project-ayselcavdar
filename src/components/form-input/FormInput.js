@@ -1,20 +1,21 @@
+import React from 'react';
 import { useField, ErrorMessage } from 'formik';
 import styles from './FormInput.module.css';
 import PropTypes from 'prop-types';
 
-export default function FormInput({ label, customClass='', ...props }) {
+export default function FormInput({ label, customClass = '', ...props }) {
   const { type } = props;
   const [field, meta] = useField(props);
-  
+
   return (
-    <div className={`${styles["form-container"]} ${customClass}`}>
-      <label className={styles["form-container--label"]} htmlFor={field.name}>
+    <div className={`${styles['form-container']} ${customClass}`}>
+      <label className={styles['form-container--label']} htmlFor={field.name}>
         {label}
       </label>
-      {type === "textarea" ? (
+      {type === 'textarea' ? (
         <textarea
-          className={`${styles["form-control"]} ${
-            meta.touched && meta.error && styles["is-invalid"]
+          className={`${styles['form-control']} ${
+            meta.touched && meta.error && styles['is-invalid']
           } `}
           id={field.name}
           rows="2"
@@ -24,10 +25,10 @@ export default function FormInput({ label, customClass='', ...props }) {
         />
       ) : (
         <input
-          className={`${styles["form-control"]} ${
-            meta.touched && meta.error && styles["is-invalid"]
+          className={`${styles['form-control']} ${
+            meta.touched && meta.error && styles['is-invalid']
           }`}
-          id={field.name}
+          id={field?.name}
           {...field}
           {...props}
           autoComplete="off"
@@ -35,7 +36,7 @@ export default function FormInput({ label, customClass='', ...props }) {
       )}
       <ErrorMessage
         component="div"
-        name={field.name}
+        name={field?.name}
         className={styles.error}
       />
     </div>

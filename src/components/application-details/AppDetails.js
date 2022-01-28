@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React,{ useState } from 'react';
 import styles from './AppDetails.module.css';
 import Button from '../button/Button';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -71,7 +71,7 @@ const AppDetails = ({ isAdmin }) => {
                 <span className={styles['detail-item--label']}>
                   Başvuru Durumu:
                 </span>{' '}
-                {statusEnum[details?.status].descr}.
+                {statusEnum[details?.status]?.descr}.
               </li>
               {isAdmin && !details?.hasResponse && (
                 <CommentBox
