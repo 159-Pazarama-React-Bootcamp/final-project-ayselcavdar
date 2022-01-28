@@ -1,3 +1,4 @@
+import React from 'react';
 import { Formik, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import styles from './CreateAppForm.module.css';
@@ -26,6 +27,7 @@ const CreateAppForm = () => {
     tc: '',
   };
 
+  // Realtime database dosya boyutu limiti
   const FILE_SIZE = 1e7;
 
   const validate = Yup.object({
@@ -87,12 +89,14 @@ const CreateAppForm = () => {
           resetForm({});
         }}
         validate={(values) => {
-          const errors={};
-          if(values?.photo){
-            const base64str = values?.photo?.split("base64,")[1];
+          const errors = {};
+          // kullanıcının yüklediği fotoğraf boyutu kontrol ediliyor.
+          if (values?.photo) {
+            const base64str = values?.photo?.split('base64,')[1];
             const decoded = atob(base64str);
             if (decoded?.length > FILE_SIZE) {
-              errors.photo ="Fotoğraf boyutunuz çok büyük 9MB altı yüklemeyi deneyin.";
+              errors.photo =
+                'Fotoğraf boyutunuz çok büyük 9MB altı yüklemeyi deneyin.';
               return errors;
             }
           }

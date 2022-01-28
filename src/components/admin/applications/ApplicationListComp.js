@@ -1,4 +1,4 @@
-import { useState } from 'react/cjs/react.development';
+import React,{ useState } from 'react/cjs/react.development';
 import styles from './ApplicationListComp.module.css';
 import ApplicationCard from '../../applications/ApplicationCard';
 import Button from '../../button/Button';
@@ -26,6 +26,8 @@ const ApplicationListComp = () => {
     user.currUser && dispatch(logoutInitiate());
   };
 
+  // default admin cevaplanmamış başvuruları görüntülemekte
+  // isterse cevaplanmış başvuruları da filtreleyerek görüntüleyebilmektedir.
   const applicationList = data?.applications
     ?.filter((item) => {
       if (values.filterVal !== '' && item.status !== values.filterVal)

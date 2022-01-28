@@ -1,10 +1,10 @@
+import React, { useEffect } from 'react';
 import styles from './AdminLoginComp.module.css';
 import { Form, Formik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import Button from '../../button/Button';
 import FormInput from '../../form-input/FormInput';
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginInitiate } from '../../../redux/actions/loginActions';
 import Alert from '../../alert/Alert';
@@ -57,7 +57,7 @@ const AdminLoginComp = () => {
         }}
       >
         {() => (
-          <div className={styles["admin-login-container"]}>
+          <div className={styles['admin-login-container']}>
             <div>
               <h1>Adminastration</h1>
               <Form>
@@ -68,7 +68,7 @@ const AdminLoginComp = () => {
                   name="confirmPassword"
                   type="password"
                 />
-                <Button type="submit" content={"Giriş"} disabled={loading} />
+                <Button type="submit" content={'Giriş'} disabled={loading} />
               </Form>
             </div>
           </div>
