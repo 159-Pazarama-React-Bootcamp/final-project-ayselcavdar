@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AdminLogin /> rendering AdminLogin snapshots check 1`] = `
+<div
+  className="admin-login-container"
+>
+  <div>
+    <h1>
+      Adminastration
+    </h1>
+    <form
+      action="#"
+      onReset={[Function]}
+      onSubmit={[Function]}
+    >
+      <div
+        className="form-container "
+      >
+        <label
+          className="form-container--label"
+          htmlFor="email"
+        >
+          E-posta
+        </label>
+        <input
+          autoComplete="off"
+          className="form-control false"
+          id="email"
+          name="email"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="email"
+          value=""
+        />
+      </div>
+      <div
+        className="form-container "
+      >
+        <label
+          className="form-container--label"
+          htmlFor="password"
+        >
+          Şifre
+        </label>
+        <input
+          autoComplete="off"
+          className="form-control false"
+          id="password"
+          name="password"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="password"
+          value=""
+        />
+      </div>
+      <div
+        className="form-container "
+      >
+        <label
+          className="form-container--label"
+          htmlFor="confirmPassword"
+        >
+          Şifrenizi Onaylayın
+        </label>
+        <input
+          autoComplete="off"
+          className="form-control false"
+          id="confirmPassword"
+          name="confirmPassword"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="password"
+          value=""
+        />
+      </div>
+      <button
+        className="btn"
+        disabled={false}
+        style={Object {}}
+        type="submit"
+      >
+        Giriş
+      </button>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`AdminLogin snapshots test 1`] = `
+<div
+  className="admin-login-container"
+>
+  <div>
+    <h1>
+      Adminastration
+    </h1>
+    <form
+      action="#"
+      onReset={[Function]}
+      onSubmit={[Function]}
+    >
+      <div
+        className="form-container "
+      >
+        <label
+          className="form-container--label"
+          htmlFor="email"
+        >
+          E-posta
+        </label>
+        <input
+          autoComplete="off"
+          className="form-control false"
+          id="email"
+          name="email"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="email"
+          value=""
+        />
+      </div>
+      <div
+        className="form-container "
+      >
+        <label
+          className="form-container--label"
+          htmlFor="password"
+        >
+          Şifre
+        </label>
+        <input
+          autoComplete="off"
+          className="form-control false"
+          id="password"
+          name="password"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="password"
+          value=""
+        />
+      </div>
+      <div
+        className="form-container "
+      >
+        <label
+          className="form-container--label"
+          htmlFor="confirmPassword"
+        >
+          Şifrenizi Onaylayın
+        </label>
+        <input
+          autoComplete="off"
+          className="form-control false"
+          id="confirmPassword"
+          name="confirmPassword"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="password"
+          value=""
+        />
+      </div>
+      <button
+        className="btn"
+        disabled={false}
+        style={Object {}}
+        type="submit"
+      >
+        Giriş
+      </button>
+    </form>
+  </div>
+</div>
+`;

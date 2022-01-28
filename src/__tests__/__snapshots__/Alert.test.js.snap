@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert comp change className to props Alert render check 1`] = `
+<div
+  className="alert-container alert-info "
+>
+  <div
+    className="body-container"
+  >
+    <p
+      className="body-text"
+    >
+      informational
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Alert render check 1`] = `
+<div
+  className="alert-container alert-info "
+>
+  <div
+    className="body-container"
+  >
+    <p
+      className="body-text"
+    >
+      informational
+    </p>
+  </div>
+</div>
+`;

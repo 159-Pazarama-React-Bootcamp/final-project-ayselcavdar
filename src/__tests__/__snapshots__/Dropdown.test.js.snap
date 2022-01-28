@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dropdown /> rendering Dropdown render check 1`] = `
+<div
+  className="form-group--select "
+>
+  <select
+    className="form-control"
+    onChange={[MockFunction]}
+    placeholder=""
+    value=""
+  >
+    <option
+      value=""
+    >
+      
+    </option>
+    <option
+      value="ONE"
+    >
+      ONE
+    </option>
+    <option
+      value="TWO"
+    >
+      TWO
+    </option>
+  </select>
+</div>
+`;
+
+exports[`<Dropdown /> rendering Dropdown snapshots check 1`] = `
+<div
+  className="form-group--select "
+>
+  <select
+    className="form-control"
+    onChange={[MockFunction]}
+    placeholder=""
+    value=""
+  >
+    <option
+      value=""
+    >
+      
+    </option>
+    <option
+      value="ONE"
+    >
+      ONE
+    </option>
+    <option
+      value="TWO"
+    >
+      TWO
+    </option>
+  </select>
+</div>
+`;
+
+exports[`Dropdown render check 1`] = `
+<div
+  className="form-group--select "
+>
+  <select
+    className="form-control"
+    onChange={[MockFunction]}
+    placeholder=""
+    value=""
+  >
+    <option
+      value=""
+    >
+      
+    </option>
+    <option
+      value="ONE"
+    >
+      ONE
+    </option>
+    <option
+      value="TWO"
+    >
+      TWO
+    </option>
+  </select>
+</div>
+`;

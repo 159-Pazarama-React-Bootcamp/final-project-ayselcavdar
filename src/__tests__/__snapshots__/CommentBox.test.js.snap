@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CommentAdd /> rendering CommentBox render check 1`] = `
+<div
+  className="comment-box"
+>
+  <textarea
+    cols="35"
+    onChange={[MockFunction]}
+    placeholder="başvuruyu cevapla"
+    rows="2"
+    value="hello"
+  />
+  <span
+    className="active"
+    onClick={[MockFunction]}
+  >
+    Gönder
+  </span>
+</div>
+`;
+
+exports[`<CommentBox /> rendering CommentBox snapshots check 1`] = `
+<div
+  className="comment-box"
+>
+  <textarea
+    cols="35"
+    onChange={[MockFunction]}
+    placeholder="başvuruyu cevapla"
+    rows="2"
+    value="hello"
+  />
+  <span
+    className="active"
+    onClick={[MockFunction]}
+  >
+    Gönder
+  </span>
+</div>
+`;
+
+exports[`CommentBox render check 1`] = `
+<div
+  className="comment-box"
+>
+  <textarea
+    cols="35"
+    onChange={[MockFunction]}
+    placeholder="başvuruyu cevapla"
+    rows="2"
+    value="comment"
+  />
+  <span
+    className="active"
+    onClick={[MockFunction]}
+  >
+    Gönder
+  </span>
+</div>
+`;

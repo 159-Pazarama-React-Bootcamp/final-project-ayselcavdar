@@ -1,0 +1,479 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AppDetails /> rendering AppDetails snapshots check 1`] = `
+<div
+  className="application-container"
+  style={
+    Object {
+      "justifyContent": false,
+    }
+  }
+>
+  <div>
+    <p
+      className="already-have"
+    >
+      Mevcut başvurularımı görüntülemek istiyorum.
+    </p>
+    <div
+      className="query-container"
+    >
+      <div
+        className="form-container custom-input"
+      >
+        <label
+          className="form-container--label"
+          htmlFor="tc"
+        >
+          
+        </label>
+        <input
+          autoComplete="off"
+          className="form-control false"
+          id="tc"
+          name="tc"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Tc kimlik numaranızı giriniz"
+          type="text"
+          value=""
+        />
+      </div>
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={Object {}}
+        type="button"
+      >
+        Görüntüle
+      </button>
+    </div>
+    <hr />
+    <h1
+      style={
+        Object {
+          "color": "rgb(107, 99, 255)",
+          "marginTop": "0px",
+          "textAlign": false,
+        }
+      }
+    >
+      Basvuru Olustur
+    </h1>
+    <form
+      action="#"
+      onReset={[Function]}
+      onSubmit={[Function]}
+    >
+      <div
+        className="form-container "
+      >
+        <label
+          className="form-container--label"
+          htmlFor="firstName"
+        >
+          Ad
+        </label>
+        <input
+          autoComplete="off"
+          className="form-control false"
+          id="firstName"
+          name="firstName"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="form-container "
+      >
+        <label
+          className="form-container--label"
+          htmlFor="lastName"
+        >
+          Soyad
+        </label>
+        <input
+          autoComplete="off"
+          className="form-control false"
+          id="lastName"
+          name="lastName"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="form-container "
+      >
+        <label
+          className="form-container--label"
+          htmlFor="age"
+        >
+          Yaş
+        </label>
+        <input
+          autoComplete="off"
+          className="form-control false"
+          id="age"
+          name="age"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        className="form-container "
+      >
+        <label
+          className="form-container--label"
+          htmlFor="tcNum"
+        >
+          TC
+        </label>
+        <input
+          autoComplete="off"
+          className="form-control false"
+          id="tcNum"
+          name="tcNum"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="form-container "
+      >
+        <label
+          className="form-container--label"
+          htmlFor="reason"
+        >
+          Basvuru Nedeni
+        </label>
+        <textarea
+          className="form-control false "
+          cols="50"
+          id="reason"
+          name="reason"
+          onBlur={[Function]}
+          onChange={[Function]}
+          rows="2"
+          type="textarea"
+          value=""
+        />
+      </div>
+      <div
+        className="form-container "
+      >
+        <label
+          className="form-container--label"
+          htmlFor="address"
+        >
+          Adress
+        </label>
+        <textarea
+          className="form-control false "
+          cols="50"
+          id="address"
+          name="address"
+          onBlur={[Function]}
+          onChange={[Function]}
+          rows="2"
+          type="textarea"
+          value=""
+        />
+      </div>
+      <div
+        className="main-file--container"
+      >
+        <div
+          className="file-input--container"
+        >
+          <label
+            style={
+              Object {
+                "marginBottom": "1rem",
+              }
+            }
+          >
+            Fotoğraf
+          </label>
+          <input
+            accept="image/*"
+            name="photo"
+            onChange={[Function]}
+            type="file"
+          />
+        </div>
+        
+      </div>
+      <div
+        className="btn-container"
+      >
+        <button
+          className="btn"
+          style={Object {}}
+          type="submit"
+        >
+          Gönder
+        </button>
+      </div>
+    </form>
+  </div>
+  <div>
+    <img
+      src="test-file-stub"
+      style={
+        Object {
+          "borderRadius": "1rem",
+          "display": false,
+        }
+      }
+      width={512}
+    />
+  </div>
+</div>
+`;
+
+exports[`AppDetails render check 1`] = `
+<div
+  className="application-container"
+  style={
+    Object {
+      "justifyContent": false,
+    }
+  }
+>
+  <div>
+    <p
+      className="already-have"
+    >
+      Mevcut başvurularımı görüntülemek istiyorum.
+    </p>
+    <div
+      className="query-container"
+    >
+      <div
+        className="form-container custom-input"
+      >
+        <label
+          className="form-container--label"
+          htmlFor="tc"
+        >
+          
+        </label>
+        <input
+          autoComplete="off"
+          className="form-control false"
+          id="tc"
+          name="tc"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Tc kimlik numaranızı giriniz"
+          type="text"
+          value=""
+        />
+      </div>
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={Object {}}
+        type="button"
+      >
+        Görüntüle
+      </button>
+    </div>
+    <hr />
+    <h1
+      style={
+        Object {
+          "color": "rgb(107, 99, 255)",
+          "marginTop": "0px",
+          "textAlign": false,
+        }
+      }
+    >
+      Basvuru Olustur
+    </h1>
+    <form
+      action="#"
+      onReset={[Function]}
+      onSubmit={[Function]}
+    >
+      <div
+        className="form-container "
+      >
+        <label
+          className="form-container--label"
+          htmlFor="firstName"
+        >
+          Ad
+        </label>
+        <input
+          autoComplete="off"
+          className="form-control false"
+          id="firstName"
+          name="firstName"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="form-container "
+      >
+        <label
+          className="form-container--label"
+          htmlFor="lastName"
+        >
+          Soyad
+        </label>
+        <input
+          autoComplete="off"
+          className="form-control false"
+          id="lastName"
+          name="lastName"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="form-container "
+      >
+        <label
+          className="form-container--label"
+          htmlFor="age"
+        >
+          Yaş
+        </label>
+        <input
+          autoComplete="off"
+          className="form-control false"
+          id="age"
+          name="age"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        className="form-container "
+      >
+        <label
+          className="form-container--label"
+          htmlFor="tcNum"
+        >
+          TC
+        </label>
+        <input
+          autoComplete="off"
+          className="form-control false"
+          id="tcNum"
+          name="tcNum"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="form-container "
+      >
+        <label
+          className="form-container--label"
+          htmlFor="reason"
+        >
+          Basvuru Nedeni
+        </label>
+        <textarea
+          className="form-control false "
+          cols="50"
+          id="reason"
+          name="reason"
+          onBlur={[Function]}
+          onChange={[Function]}
+          rows="2"
+          type="textarea"
+          value=""
+        />
+      </div>
+      <div
+        className="form-container "
+      >
+        <label
+          className="form-container--label"
+          htmlFor="address"
+        >
+          Adress
+        </label>
+        <textarea
+          className="form-control false "
+          cols="50"
+          id="address"
+          name="address"
+          onBlur={[Function]}
+          onChange={[Function]}
+          rows="2"
+          type="textarea"
+          value=""
+        />
+      </div>
+      <div
+        className="main-file--container"
+      >
+        <div
+          className="file-input--container"
+        >
+          <label
+            style={
+              Object {
+                "marginBottom": "1rem",
+              }
+            }
+          >
+            Fotoğraf
+          </label>
+          <input
+            accept="image/*"
+            name="photo"
+            onChange={[Function]}
+            type="file"
+          />
+        </div>
+        
+      </div>
+      <div
+        className="btn-container"
+      >
+        <button
+          className="btn"
+          style={Object {}}
+          type="submit"
+        >
+          Gönder
+        </button>
+      </div>
+    </form>
+  </div>
+  <div>
+    <img
+      src="test-file-stub"
+      style={
+        Object {
+          "borderRadius": "1rem",
+          "display": false,
+        }
+      }
+      width={512}
+    />
+  </div>
+</div>
+`;

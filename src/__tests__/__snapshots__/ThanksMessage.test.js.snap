@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ThanksMessage /> rendering ThanksMessage component snapshot test 1`] = `
+<div
+  className="message-container"
+>
+  <p>
+    Hello
+  </p>
+  <p />
+</div>
+`;
+
+exports[`<ThanksMessage /> rendering ThanksMessage snapshot test 1`] = `
+<div
+  className="message-container"
+>
+  <p>
+    Hello
+  </p>
+  <p />
+</div>
+`;
+
+exports[`ThanksMessage component snapshot test 1`] = `
+<div
+  className="message-container"
+>
+  <p>
+    Hello
+  </p>
+  <p />
+</div>
+`;
+
+exports[`ThanksMessage render check 1`] = `
+<div
+  className="message-container"
+>
+  <p>
+    Hello
+  </p>
+  <p />
+</div>
+`;
