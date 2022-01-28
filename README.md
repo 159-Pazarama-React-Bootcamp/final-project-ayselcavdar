@@ -20,7 +20,7 @@
 ## Built With
 - [React]((https://reactjs.org/))
 
-## Overview
+## Overview
 - [Live Version](https://application-management.netlify.app)
 - [Admin Page](https://application-management.netlify.app/admin)
 - To access admin page;
