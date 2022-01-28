@@ -1,4 +1,4 @@
-import React,{ useState } from 'react/cjs/react.development';
+import React,{ useState } from 'react';
 import styles from './ApplicationListComp.module.css';
 import ApplicationCard from '../../applications/ApplicationCard';
 import Button from '../../button/Button';
