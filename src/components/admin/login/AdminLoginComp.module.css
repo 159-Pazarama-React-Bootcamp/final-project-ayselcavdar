@@ -1,0 +1,23 @@
+.admin-login-container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-image: url(../../../assets/images/waves.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.admin-login-container > div {
+  height: 75vh;
+}
+
+.admin-login-container h1 {
+  color: #7872fe;
+}
+
+@media only screen and (min-width: 760px) {
+  .admin-login-container {
+    align-items: center;
+  }
+}

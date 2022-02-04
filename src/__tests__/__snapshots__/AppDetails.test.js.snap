@@ -1,0 +1,343 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AppDetails /> rendering AppDetails render check 1`] = `
+<div
+  className="details-container"
+>
+  <div
+    className="subdetails-container"
+  >
+    <div>
+      <h3
+        className="detail-title"
+      >
+         numaralı başvuru
+         
+        bilgileri
+        .
+      </h3>
+      <div>
+        <ul
+          className="detail-items"
+        >
+          <li>
+            <span
+              style={
+                Object {
+                  "fontSize": "1.2rem",
+                  "fontWeight": "500",
+                }
+              }
+            >
+              Ad-Soyad:
+            </span>
+             
+             
+          </li>
+          <li>
+            <span
+              className="detail-item--label"
+            >
+              TC Num:
+            </span>
+             
+          </li>
+          <li>
+            <span
+              className="detail-item--label"
+            >
+              Yaş:
+            </span>
+             
+          </li>
+          <li>
+            <span
+              className="detail-item--label"
+            >
+              Başvuru nedeni:
+            </span>
+             
+          </li>
+          <li>
+            <span
+              className="detail-item--label"
+            >
+              Address:
+            </span>
+             
+          </li>
+          <li>
+            <span
+              className="detail-item--label"
+            >
+              Başvuru Durumu:
+            </span>
+             
+            .
+          </li>
+          <div
+            className="comment-box"
+          >
+            <textarea
+              cols="35"
+              onChange={[Function]}
+              placeholder="başvuruyu cevapla"
+              rows="2"
+              value=""
+            />
+            <span
+              className="disable"
+              onClick={[Function]}
+            >
+              Gönder
+            </span>
+          </div>
+        </ul>
+      </div>
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={Object {}}
+        type="button"
+      >
+        Başvurular
+      </button>
+    </div>
+    <div>
+      <img
+        alt="photo of undefined"
+        className="avatar"
+        src="https://www.w3schools.com/howto/img_avatar2.png"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<AppDetails /> rendering AppDetails snapshots check 1`] = `
+<div
+  className="details-container"
+>
+  <div
+    className="subdetails-container"
+  >
+    <div>
+      <h3
+        className="detail-title"
+      >
+         numaralı başvuru
+         
+        bilgileri
+        .
+      </h3>
+      <div>
+        <ul
+          className="detail-items"
+        >
+          <li>
+            <span
+              style={
+                Object {
+                  "fontSize": "1.2rem",
+                  "fontWeight": "500",
+                }
+              }
+            >
+              Ad-Soyad:
+            </span>
+             
+             
+          </li>
+          <li>
+            <span
+              className="detail-item--label"
+            >
+              TC Num:
+            </span>
+             
+          </li>
+          <li>
+            <span
+              className="detail-item--label"
+            >
+              Yaş:
+            </span>
+             
+          </li>
+          <li>
+            <span
+              className="detail-item--label"
+            >
+              Başvuru nedeni:
+            </span>
+             
+          </li>
+          <li>
+            <span
+              className="detail-item--label"
+            >
+              Address:
+            </span>
+             
+          </li>
+          <li>
+            <span
+              className="detail-item--label"
+            >
+              Başvuru Durumu:
+            </span>
+             
+            .
+          </li>
+          <div
+            className="comment-box"
+          >
+            <textarea
+              cols="35"
+              onChange={[Function]}
+              placeholder="başvuruyu cevapla"
+              rows="2"
+              value=""
+            />
+            <span
+              className="disable"
+              onClick={[Function]}
+            >
+              Gönder
+            </span>
+          </div>
+        </ul>
+      </div>
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={Object {}}
+        type="button"
+      >
+        Başvurular
+      </button>
+    </div>
+    <div>
+      <img
+        alt="photo of undefined"
+        className="avatar"
+        src="https://www.w3schools.com/howto/img_avatar2.png"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AppDetails render check 1`] = `
+<div
+  className="details-container"
+>
+  <div
+    className="subdetails-container"
+  >
+    <div>
+      <h3
+        className="detail-title"
+      >
+         numaralı başvuru
+         
+        bilgileri
+        .
+      </h3>
+      <div>
+        <ul
+          className="detail-items"
+        >
+          <li>
+            <span
+              style={
+                Object {
+                  "fontSize": "1.2rem",
+                  "fontWeight": "500",
+                }
+              }
+            >
+              Ad-Soyad:
+            </span>
+             
+             
+          </li>
+          <li>
+            <span
+              className="detail-item--label"
+            >
+              TC Num:
+            </span>
+             
+          </li>
+          <li>
+            <span
+              className="detail-item--label"
+            >
+              Yaş:
+            </span>
+             
+          </li>
+          <li>
+            <span
+              className="detail-item--label"
+            >
+              Başvuru nedeni:
+            </span>
+             
+          </li>
+          <li>
+            <span
+              className="detail-item--label"
+            >
+              Address:
+            </span>
+             
+          </li>
+          <li>
+            <span
+              className="detail-item--label"
+            >
+              Başvuru Durumu:
+            </span>
+             
+            .
+          </li>
+          <div
+            className="comment-box"
+          >
+            <textarea
+              cols="35"
+              onChange={[Function]}
+              placeholder="başvuruyu cevapla"
+              rows="2"
+              value=""
+            />
+            <span
+              className="disable"
+              onClick={[Function]}
+            >
+              Gönder
+            </span>
+          </div>
+        </ul>
+      </div>
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={Object {}}
+        type="button"
+      >
+        Başvurular
+      </button>
+    </div>
+    <div>
+      <img
+        alt="photo of undefined"
+        className="avatar"
+        src="https://www.w3schools.com/howto/img_avatar2.png"
+      />
+    </div>
+  </div>
+</div>
+`;

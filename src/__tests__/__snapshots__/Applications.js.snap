@@ -1,0 +1,352 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Applications /> rendering AppDetails render check 1`] = `
+<div
+  className="applications-main--container"
+>
+  <div
+    className="header-container"
+  >
+    <div
+      className="message-container"
+    >
+      <p>
+        Teşekkürler! Başvurunuz başarıyla alınmıştır.
+      </p>
+      <p>
+        Başvuru durumunuzu detaya tıklayarak öğrenebilirsiniz.
+      </p>
+    </div>
+    <div
+      className="subheader-section"
+    >
+      <div>
+        <input
+          className="query-input"
+          id="queryCode"
+          maxLength="10"
+          name="queryCode"
+          onChange={[Function]}
+          placeholder="Başvuru kodunuz ile filtreleyiniz.."
+          type="text"
+          value=""
+        />
+        <div
+          className="form-group--select "
+        >
+          <select
+            className="form-control"
+            name="filterVal"
+            onChange={[Function]}
+            placeholder=""
+            value=""
+          >
+            <option
+              value=""
+            >
+              Başvuru durumuna göre filtereleyiniz
+            </option>
+            <option
+              value="EVALUATING"
+            >
+              EVALUATING
+            </option>
+            <option
+              value="ANSWERED"
+            >
+              ANSWERED
+            </option>
+          </select>
+        </div>
+      </div>
+      <div
+        className="btn-container"
+      >
+        <div
+          className="new-app-btn"
+        >
+          <a
+            href="/"
+            onClick={[Function]}
+          >
+            <button
+              className="btn"
+              style={
+                Object {
+                  "backgroundColor": "#E6E6E6",
+                  "color": "#6B63FF",
+                }
+              }
+              type="reset"
+            >
+              Yeni Basvuru Oluştur
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      className="appList-container"
+    >
+      <div
+        className="alert-container alert-info "
+      >
+        <div
+          className="title-container"
+        >
+          <h3
+            className="title-text"
+          >
+            Bilgilendirme
+          </h3>
+        </div>
+        <div
+          className="body-container"
+        >
+          <p
+            className="body-text"
+          >
+            Herhangi bir başvuru bulunamadı.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Applications /> rendering AppDetails snapshots check 1`] = `
+<div
+  className="applications-main--container"
+>
+  <div
+    className="header-container"
+  >
+    <div
+      className="message-container"
+    >
+      <p>
+        Teşekkürler! Başvurunuz başarıyla alınmıştır.
+      </p>
+      <p>
+        Başvuru durumunuzu detaya tıklayarak öğrenebilirsiniz.
+      </p>
+    </div>
+    <div
+      className="subheader-section"
+    >
+      <div>
+        <input
+          className="query-input"
+          id="queryCode"
+          maxLength="10"
+          name="queryCode"
+          onChange={[Function]}
+          placeholder="Başvuru kodunuz ile filtreleyiniz.."
+          type="text"
+          value=""
+        />
+        <div
+          className="form-group--select "
+        >
+          <select
+            className="form-control"
+            name="filterVal"
+            onChange={[Function]}
+            placeholder=""
+            value=""
+          >
+            <option
+              value=""
+            >
+              Başvuru durumuna göre filtereleyiniz
+            </option>
+            <option
+              value="EVALUATING"
+            >
+              EVALUATING
+            </option>
+            <option
+              value="ANSWERED"
+            >
+              ANSWERED
+            </option>
+          </select>
+        </div>
+      </div>
+      <div
+        className="btn-container"
+      >
+        <div
+          className="new-app-btn"
+        >
+          <a
+            href="/"
+            onClick={[Function]}
+          >
+            <button
+              className="btn"
+              style={
+                Object {
+                  "backgroundColor": "#E6E6E6",
+                  "color": "#6B63FF",
+                }
+              }
+              type="reset"
+            >
+              Yeni Basvuru Oluştur
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      className="appList-container"
+    >
+      <div
+        className="alert-container alert-info "
+      >
+        <div
+          className="title-container"
+        >
+          <h3
+            className="title-text"
+          >
+            Bilgilendirme
+          </h3>
+        </div>
+        <div
+          className="body-container"
+        >
+          <p
+            className="body-text"
+          >
+            Herhangi bir başvuru bulunamadı.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AppDetails render check 1`] = `
+<div
+  className="applications-main--container"
+>
+  <div
+    className="header-container"
+  >
+    <div
+      className="message-container"
+    >
+      <p>
+        Teşekkürler! Başvurunuz başarıyla alınmıştır.
+      </p>
+      <p>
+        Başvuru durumunuzu detaya tıklayarak öğrenebilirsiniz.
+      </p>
+    </div>
+    <div
+      className="subheader-section"
+    >
+      <div>
+        <input
+          className="query-input"
+          id="queryCode"
+          maxLength="10"
+          name="queryCode"
+          onChange={[Function]}
+          placeholder="Başvuru kodunuz ile filtreleyiniz.."
+          type="text"
+          value=""
+        />
+        <div
+          className="form-group--select "
+        >
+          <select
+            className="form-control"
+            name="filterVal"
+            onChange={[Function]}
+            placeholder=""
+            value=""
+          >
+            <option
+              value=""
+            >
+              Başvuru durumuna göre filtereleyiniz
+            </option>
+            <option
+              value="EVALUATING"
+            >
+              EVALUATING
+            </option>
+            <option
+              value="ANSWERED"
+            >
+              ANSWERED
+            </option>
+          </select>
+        </div>
+      </div>
+      <div
+        className="btn-container"
+      >
+        <div
+          className="new-app-btn"
+        >
+          <a
+            href="/"
+            onClick={[Function]}
+          >
+            <button
+              className="btn"
+              style={
+                Object {
+                  "backgroundColor": "#E6E6E6",
+                  "color": "#6B63FF",
+                }
+              }
+              type="reset"
+            >
+              Yeni Basvuru Oluştur
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      className="appList-container"
+    >
+      <div
+        className="alert-container alert-info "
+      >
+        <div
+          className="title-container"
+        >
+          <h3
+            className="title-text"
+          >
+            Bilgilendirme
+          </h3>
+        </div>
+        <div
+          className="body-container"
+        >
+          <p
+            className="body-text"
+          >
+            Herhangi bir başvuru bulunamadı.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

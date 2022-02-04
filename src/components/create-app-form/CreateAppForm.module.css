@@ -1,0 +1,121 @@
+.application-container {
+  width: 100%;
+  background-color: #edf2f6;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+.query-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.query-container > button {
+  height: 2.3rem;
+  width: 50%;
+  margin-top: 0px;
+}
+.query-container > div {
+  width: 100%;
+  margin-bottom: 0px;
+}
+
+.custom-input {
+  margin-bottom: 0px;
+  width: 100%;
+  margin-right: 0.5rem;
+}
+.already-have {
+  color: rgb(132, 135, 137);
+  text-align: center;
+  font-weight: 600;
+}
+.main-file--container {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 0.5rem;
+}
+
+.file-input--container {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.btn-container > button {
+  margin-right: 1rem;
+}
+
+.remove-image {
+  position: relative;
+  left: 140px;
+  bottom: -15px;
+  width: 25px;
+  height: 25px;
+  background-color: #e6e6e6;
+  border-radius: 50%;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-size: 0.6rem;
+  margin-top: 0.2rem;
+}
+
+
+@media only screen and (max-width: 540px) {
+  .application-container {
+    height: auto;
+    
+  }
+  .query-container {
+    width: 95%;
+    margin: auto;
+  }
+  .query-container > button {
+    height: 2.3rem;
+    width: 50%;
+    margin-top: 0px;
+  }
+  .query-container > div {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+  .file-input--container {
+    padding-top: 0px;
+    margin-left: 0.5rem;
+  }
+  .uploaded-img--container {
+    margin-right: 1rem;
+  }
+  .btn-container {
+    margin-left: 0.5rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .application-container {
+    align-items: flex-start;
+  }
+}
+
+@media only screen and (min-width: 1020px) {
+  .application-container {
+    align-items: center;
+    height: auto;
+  }
+}

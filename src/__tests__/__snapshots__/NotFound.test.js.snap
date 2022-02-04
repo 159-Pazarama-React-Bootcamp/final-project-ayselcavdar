@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotFound /> rendering NotFound render check 1`] = `
+<div
+  className="notFound-container"
+>
+  <h1
+    className="notFound-header"
+  >
+    Sayfa Bulunamadı
+  </h1>
+  <img
+    src="test-file-stub"
+    width="500px"
+  />
+  <p
+    className="notFound-content"
+  >
+    Sayfa kaldırılmış veya değiştirilmiş olabilir.
+  </p>
+  <div>
+    <button
+      className="btn"
+      onClick={[Function]}
+      style={Object {}}
+      type="button"
+    >
+      Başvurularım
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<NotFound /> rendering NotFound snapshots check 1`] = `
+<div
+  className="notFound-container"
+>
+  <h1
+    className="notFound-header"
+  >
+    Sayfa Bulunamadı
+  </h1>
+  <img
+    src="test-file-stub"
+    width="500px"
+  />
+  <p
+    className="notFound-content"
+  >
+    Sayfa kaldırılmış veya değiştirilmiş olabilir.
+  </p>
+  <div>
+    <button
+      className="btn"
+      onClick={[Function]}
+      style={Object {}}
+      type="button"
+    >
+      Başvurularım
+    </button>
+  </div>
+</div>
+`;
+
+exports[`NotFound render check 1`] = `
+<div
+  className="notFound-container"
+>
+  <h1
+    className="notFound-header"
+  >
+    Sayfa Bulunamadı
+  </h1>
+  <img
+    src="test-file-stub"
+    width="500px"
+  />
+  <p
+    className="notFound-content"
+  >
+    Sayfa kaldırılmış veya değiştirilmiş olabilir.
+  </p>
+  <div>
+    <button
+      className="btn"
+      onClick={[Function]}
+      style={Object {}}
+      type="button"
+    >
+      Başvurularım
+    </button>
+  </div>
+</div>
+`;

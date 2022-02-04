@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> Button render check 1`] = `
+<button
+  className="btn"
+  style={Object {}}
+  type="button"
+>
+  click
+</button>
+`;
+
+exports[`<Button /> rendering Button snapshots check 1`] = `
+<button
+  className="btn"
+  style={Object {}}
+  type="button"
+>
+  click
+</button>
+`;
+
+exports[`Alert comp change className to props Button render check 1`] = `
+<button
+  className="btn"
+  style={Object {}}
+  type="button"
+>
+  click
+</button>
+`;
+
+exports[`Button render check 1`] = `
+<button
+  className="btn"
+  style={Object {}}
+  type="button"
+>
+  click
+</button>
+`;

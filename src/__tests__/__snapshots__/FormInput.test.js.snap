@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormInput /> rendering FormInput snapshots check 1`] = `
+<div
+  className="form-container "
+>
+  <label
+    className="form-container--label"
+    htmlFor="test"
+  >
+    test
+  </label>
+  <input
+    autoComplete="off"
+    className="form-control false"
+    id="test"
+    name="test"
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="text"
+  />
+</div>
+`;
+
+exports[`<FormInput /> rendering FormInput snapshots test 1`] = `
+<div
+  className="form-container "
+>
+  <label
+    className="form-container--label"
+    htmlFor="test"
+  >
+    test
+  </label>
+  <input
+    autoComplete="off"
+    className="form-control false"
+    id="test"
+    name="test"
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="text"
+  />
+</div>
+`;
+
+exports[`FormInput snapshots test 1`] = `
+<div
+  className="form-container "
+>
+  <label
+    className="form-container--label"
+    htmlFor="test"
+  >
+    test
+  </label>
+  <input
+    autoComplete="off"
+    className="form-control false"
+    id="test"
+    name="test"
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="text"
+  />
+</div>
+`;

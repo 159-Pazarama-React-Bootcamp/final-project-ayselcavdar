@@ -1,0 +1,9 @@
+.form-group--select {
+    display: inline-block;
+    border: 1px solid #333;
+    border-radius: .3rem;
+}
+
+.form-group--select select {
+    padding: .9rem;
+}

@@ -1,0 +1,91 @@
+
+.applications-main--container{
+  background-color: #EDF2F6;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-block: 2.5rem;
+}
+
+.appList-container > div {
+  margin-bottom: 1rem;
+}
+
+.subheader-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.subheader-section button {
+  margin-top: 0px;
+}
+
+.query-input {
+  width: 250px;
+  padding: 15px;
+  border-radius: 6px;
+  margin-right: 0.5rem;
+}
+
+.btn-container{
+  display: flex;
+  margin-top: 1rem;
+}
+.new-app-btn{
+  margin-left: 1rem;
+}
+.animation-container{
+  width: 10rem;
+}
+/* ThanksMessage comp styles */
+.message-container {
+  background-color: #D7D4F7;
+  font-weight: 500;
+  font-size: 1.2rem;
+  width: 90%;
+  border-radius: 10px;
+  color: #6B63FF;
+}
+@media only screen and (max-width: 290px){
+
+.applications-main--container{
+  overflow-x: hidden;
+}
+  .appList-container{
+    width: 90%;
+    margin-inline: auto;
+  }
+  
+}
+@media only screen and (max-width: 540px) {
+  .subheader-section input {
+    margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (min-width: 765px) {
+  .appList-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .appList-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
